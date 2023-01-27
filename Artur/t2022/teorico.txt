@@ -1,0 +1,23 @@
+1- D), Não tenho a certeza quanto às respostas B) e C), porque o algoritmo de Peterson nos slides só aparece para 2 thread
+
+2- D), O C) não tenho a certeza
+
+3- A), B)
+
+4- A), B), C), D), é estranho mas parecem tar todas bem
+
+
+5- Um problema de sistemas distribuidos que encontro neste sistemas será a de presenca de um sistema Descentralizado.
+A necessidade de ser um sistema descentralizado, será necessário para possuir uma distribuicão tanto a nivel global
+ para que 2 clientes em diferentes pontas do globo consigam na mesma aceder a um determinado ficheiro. Para isto deverá ser possivel 
+ possuir vários servidores, estando eles encarregues de um conjunto de ficheiros.
+ Uma das necessidades será não só possuir lookups eficientes para que o cliente nao demore muito tempo a encontrar o servidor que
+ é administrador do ficheiro que este quer, mas também a possibilidade de encontrar um ficheiro a partir de vários nós, para que caso um servidor
+ vá abaixo, seja possivel obter respostas quanto a outros ficheiros.
+ Para isso penso que um DHT Chord, algoritmo já implementado no BitTorrent seja uma boa solução pois verifica todas as caracteristicas acima.
+ Será necessário efetuar obviamente algumas adequacões devido aos cenários indicados no enunciado, sendo eles da existencia de ficheiros impopulares
+ mas também a de existencia de ficheiros extremamente populares. A solucao adequasse bem tanto apra ficheiros com poucas cópias, pois os lookups serão rápidos,
+ levando no máximo log N sendo N o numero de servidores, mas também para ficherios muito populares, pois como existem imemsas raízes de procura a esses serviços
+ leva a que a distribuicão dos pedidos de clientes a esse fichiero seja mais distribuida, tirando mais carga desses servidores, uma possibilidade também para reduzir
+  a carga dos servidores encarregues de ficheiros bastante populares seria a de incluir copias desses ficheiros noutros servidores para que estes também possam
+  efetuar respostas relativas a esses ficheiros, semelhante ao que acontece no DNS, onde temos SPs com autoridades sobre bases de dados e SS com copias sobre essas bases de dados.
